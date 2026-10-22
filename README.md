@@ -1,8 +1,47 @@
- Teste para Vaga de Front-End da empresa VOLVO, foi disponibilizados as informações abaixo para realização do teste.
- no dia 25 irei subir o deploy ainda quero fazer algumas alterações mais pelo que foi exigido esta completo
- caso queira baixar e brincar um pouco ( npm run dev )
+# Desafio Front-End Volvo
 
+Teste técnico para uma vaga de front-end na Volvo Cars: uma vitrine dos carros elétricos e híbridos "Recharge", com um cartão por modelo e paginação diferente para desktop e celular, seguindo o design do enunciado (abaixo).
 
+## Tecnologias
+
+- [Next.js](https://nextjs.org/) 12 (pasta `pages`)
+- React 17 e TypeScript
+- [VCC-UI](https://vcc-ui.vercel.app/), a biblioteca de componentes da Volvo
+- Axios
+
+## Como rodar
+
+Pré-requisito: Node.js (testado com a versão 24).
+
+```bash
+npm ci        # instala as dependências
+npm run dev   # abre em http://localhost:3000
+```
+
+A página busca os carros na rota interna `/api/cars`, que lê `public/api/cars.json`. O endereço está fixo em `http://localhost:3000`, então rode na porta 3000.
+
+Outros comandos:
+
+```bash
+npm run build # gera a versão de produção
+npm start     # roda a versão de produção
+npm run lint  # verifica o código
+```
+
+## Estrutura
+
+```
+pages/_app.tsx          # página principal (tema VCC-UI + HomeComponent)
+pages/api/cars.ts       # API que devolve a lista de carros
+src/components/         # CarCard, HomeComponent, paginação desktop/mobile, Spacer
+src/hooks/useCars.ts    # busca os carros
+src/types/              # tipo Car
+public/                 # dados (api/cars.json), imagens e CSS
+```
+
+---
+
+## Enunciado original
 
 # Volvo Cars (Global Online Digital)
 
